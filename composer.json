@@ -1,0 +1,25 @@
+{
+  "name":         "octris/propertycollection",
+  "type":         "library",
+  "description":  "Collection data structure with dot-notation support.",
+  "keywords":     [],
+  "homepage":     "https://github.com/octris/propertycollection",
+  "license":      "BSD-3-Clause",
+
+  "authors":      [{
+    "name":         "Harald Lapp",
+    "email":        "harald@octris.org",
+    "homepage":     "http://www.octris.org/"
+  }],
+
+  "require":      {
+    "php": ">=7.0"
+  },
+
+  "autoload":     {
+    "classmap": [ "libs/PropertyCollection.php" ],
+    "psr-4":        {
+      "Octris\\PropertyCollection\\": "libs/PropertyCollection/"
+    }
+  }
+}
