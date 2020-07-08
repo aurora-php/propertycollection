@@ -270,7 +270,7 @@ class PropertyCollection implements \IteratorAggregate, \JsonSerializable, \Coun
      *
      * @return  int                         Number of items.
      */
-    public function count()
+    public function count(): int
     {
         return count($this->data);
     }
