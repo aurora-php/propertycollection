@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Octris;
 
 use Octris\PropertyCollection\Exception;
+use Psr\Container\ContainerInterface;
 
 /**
  * Property collection allows access to stored values using dot notation.
@@ -21,21 +22,21 @@ use Octris\PropertyCollection\Exception;
  * @copyright   copyright (c) 2020-present by Harald Lapp
  * @author      Harald Lapp <harald@octris.org>
  */
-class PropertyCollection implements \IteratorAggregate, \JsonSerializable, \Countable
+class PropertyCollection implements \IteratorAggregate, \JsonSerializable, \Countable, ContainerInterface
 {
     /**
      * Data of collection.
      *
      * @var     array
      */
-    protected $data = [];
+    protected array $data = [];
 
     /**
      * Access cache.
      * 
      * @var     array
      */
-    protected $cache = [];
+    protected array $cache = [];
 
     /**
      * Constructor.
@@ -181,7 +182,7 @@ class PropertyCollection implements \IteratorAggregate, \JsonSerializable, \Coun
      * @param   string      $key       Offset to check.
      * @return  bool                    Returns true, if offset exists.
      */
-    public function isExists(string $key): bool
+    public function has(string $key): bool
     {
         $key = $this->normalizeKey($key);
 
