@@ -195,7 +195,7 @@ class PropertyCollection implements \IteratorAggregate, \JsonSerializable, \Coun
                     break;
                 }
 
-                $data =& $ret[$parts[$i]];
+                $data =& $data[$parts[$i]];
             }
         }
 
